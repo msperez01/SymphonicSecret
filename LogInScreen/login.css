@@ -1,10 +1,10 @@
 body{
     font-family: "Times", Times, serif;
-    /*background-image: linear-gradient(25deg, #163a52 0%, #6cbed8 100%);*/
+    background-image: radial-gradient( #b6d4e7 0%, #417da5 100%);
  }
 .music1{ /*Top music notes*/
     position: relative;
-    height: 90%; 
+    height: 10%; 
     width: 100%;
     background-size: 250px;
     background-image:url(https://i.imgur.com/3RhqzJb.png);
@@ -31,12 +31,32 @@ body{
     from { background-position: 100% 0; }
     to { background-position: 0 0; }
 }
- .container-center{
+
+input[type=text] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid rgb(225, 252, 255);
+    background-color: transparent;
+    border-radius: 4px;
+    width: 10%;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus{
+    width: 91%;
+    background-color: rgb(17, 59, 83);
+}
+
+ .container-login{
     width: 70vw;
-    height:50vh;
+    height: 40vh;
     background: rgba(51, 50, 50, 0.5);
-    margin-left: 15%;
+    margin-left: 12%;
     border-radius: 30px;
+    padding-top: 5.5vh;
     padding-bottom:5.5vh;
+    padding-left: 6vw;
     
 }
