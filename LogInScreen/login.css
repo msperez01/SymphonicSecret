@@ -37,7 +37,7 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid rgb(225, 252, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
     background-color: transparent;
     border-radius: 4px;
     width: 10%;
@@ -47,11 +47,12 @@ input[type=text] {
 input[type=text]:focus{
     width: 91%;
     background-color: rgb(17, 59, 83);
+    border: 3px solid rgb(167, 211, 212);
 }
 
  .container-login{
     width: 70vw;
-    height: 40vh;
+    height: 50vh;
     background: rgba(51, 50, 50, 0.5);
     margin-left: 12%;
     border-radius: 30px;
