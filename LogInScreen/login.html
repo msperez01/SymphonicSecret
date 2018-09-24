@@ -1,27 +1,34 @@
-<head>
+﻿<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="login.css">
+    <script type="text/javascript" src="login.js"></script>
 </head>
  <body>
     <div class="music1"></div>
 
-    <div class = "container-login">
-        <form><!--Email and password forms-->
-            <form class="emailInput"> 
-                <span>Email</span><br>
-                <input type="text" name="email" >
-                <label for="email"> </label>               
-            </form>
-        
-        <form>
-            <form class="passInput">
-                <span>Password</span> <br>
-                <input type="text" name="pass" >
-                <label for="pass"> </label>
-            </form>
+    <div class="container-login">
+        <!--Email and password forms-->
+        <form class="emailInput">
+            <input type="text" name="email" placeholder="Email . . .">
+            <label for="email"> </label>
         </form>
+
+        <form class="passInput">
+            <input type="text" name="pass" placeholder= "Password . . ." inputmode="numeric" minlength="8" maxlength="30" size="30" id="passwordLength">
+            <label for="pass"> </label>
+        </form>
+        <button class="loginButton"> ENTER </button>
+
+        <br> <button class="register"> Click here to register! </button>
+
     </div>
-    
+    <button class="forgottenPassword">Forgot your password?</button>
+    <div class="container-loginAPIs">
+        <button class="faceBook"> FBImage </button>
+        <div class="buttonSpace"></div>
+        <button class="google"> GImage </button>
+    </div>
+
     <div class="music2"></div>
 
 

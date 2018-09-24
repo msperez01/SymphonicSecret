@@ -40,8 +40,9 @@ input[type=text] {
     border-bottom: 2px solid rgb(255, 255, 255);
     background-color: transparent;
     border-radius: 4px;
-    width: 10%;
+    width: 30%;
     transition: width 0.4s ease-in-out;
+    position: relative;
 }
 
 input[type=text]:focus{
@@ -52,12 +53,98 @@ input[type=text]:focus{
 
  .container-login{
     width: 70vw;
-    height: 50vh;
+    height: 30vh;
     background: rgba(51, 50, 50, 0.5);
+    margin-top: 15%;
     margin-left: 12%;
     border-radius: 30px;
-    padding-top: 5.5vh;
-    padding-bottom:5.5vh;
+    padding-top: 5%;
+    padding-bottom: 2vh;
     padding-left: 6vw;
-    
+}
+
+ .loginButton{
+     background-color: #b6d4e7;
+     border: none;
+     color: rgb(17, 59, 83);
+     padding: 2%;
+     left: 50%;
+     text-align: center;
+     display: inline-block;
+     font-size: 16px;
+     cursor: pointer;
+     border-radius: 12px;
+ }
+
+ .disabledLogIn{
+     opacity: 0.6;
+     cursor: not-allowed
+ }
+
+.register {
+    background-color: transparent;
+    color: rgba(17, 59, 83, .5);
+    margin-top: 2vh;
+    padding-bottom: 2vh;
+    margin-left: 28%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    padding: -1px;
+}
+
+.forgottenPassword {
+    background-color: transparent;
+    color: rgba(17, 59, 83, .5);
+    margin-left: 38.4%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    padding: -1px;
+}
+
+.container-loginAPIs {
+    width: 50vw;
+    height: 15vh;
+    background: transparent;
+    margin-left: 28%;
+    border-radius: 30px;
+    padding-top: 10vw;
+}
+
+.faceBook {
+    background-color: rgb(17, 59, 83);
+    border: none;
+    color: white;
+    padding: 2%;
+    left: 50%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.buttonSpace{
+    width: 20vw;
+    height: auto;
+    display: inline-block;
+
+}
+
+.google {
+    background-color: rgb(17, 59, 83);
+    border: none;
+    color: white;
+    padding: 2%;
+    left: 80%;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
 }
