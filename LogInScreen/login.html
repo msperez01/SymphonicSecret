@@ -2,8 +2,38 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="login.css">
     <script type="text/javascript" src="login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-functions.js"></script>
+
+    <!-- Comment out (or don't include) services that you don't want to use -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-storage.js"></script> -->
+
+    <script>
+        var config = {
+            // ...
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyAspp7dZuAo2vu2901wEhSQAxltem5wanA",
+            authDomain: "symphonicsecret.firebaseapp.com",
+            databaseURL: "https://symphonicsecret.firebaseio.com",
+            projectId: "symphonicsecret",
+            storageBucket: "symphonicsecret.appspot.com",
+            messagingSenderId: "836529216891"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
- <body>
+
+<body>
     <div class="music1"></div>
 
     <div class="container-login">
@@ -14,10 +44,10 @@
         </form>
 
         <form class="passInput">
-            <input type="text" name="pass" placeholder= "Password . . ." inputmode="numeric" minlength="8" maxlength="30" size="30" id="passwordLength">
+            <input type="text" name="pass" placeholder="Password . . ." inputmode="numeric" minlength="8" maxlength="30" size="30" id="passwordLength">
             <label for="pass"> </label>
         </form>
-        <button class="loginButton"> ENTER </button>
+        <a href="home.html"><button class="loginButton"> ENTER </button></a>
 
         <br> <button class="register"> Click here to register! </button>
 
@@ -33,4 +63,4 @@
 
 
 
-      </body> 
+</body>

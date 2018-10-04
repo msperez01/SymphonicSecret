@@ -6,7 +6,7 @@ body{
     position: relative;
     height: 10%; 
     width: 100%;
-    background-size: 250px;
+    background-size: 300px;
     background-image:url(https://i.imgur.com/3RhqzJb.png);
     background-repeat: repeat-x;
     background-position: 0px 0px;
@@ -16,7 +16,7 @@ body{
     position: relative;
     height: 10%; 
     width: 100%;
-    background-size: 250px;
+    background-size: 300px;
     background-image:url(https://i.imgur.com/3RhqzJb.png);
     background-repeat: repeat-x;
     background-position: 0px 0px;
@@ -59,7 +59,7 @@ input[type=text]:focus{
     margin-left: 12%;
     border-radius: 30px;
     padding-top: 5%;
-    padding-bottom: 2vh;
+    padding-bottom: 2%;
     padding-left: 6vw;
 }
 
@@ -85,7 +85,7 @@ input[type=text]:focus{
     background-color: transparent;
     color: rgba(17, 59, 83, .5);
     margin-top: 2vh;
-    padding-bottom: 2vh;
+    padding-bottom: 2%;
     margin-left: 28%;
     text-align: center;
     display: inline-block;
