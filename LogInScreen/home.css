@@ -1,16 +1,19 @@
 body{
     font-family: "Times", Times, serif;
     background-image: radial-gradient( #b6d4e7 0%, #417da5 100%);
- }
+    display: inline;
+}
+
 
 .mainContainer{
     padding-left: 15%; 
 }
 .searchBar {
     padding-left: 20%;
-    padding-top: 2%;
-    
-    }
+    padding-top: 2%; 
+}
+
+
 .avi_line {
     padding-top: 10%;
 }
@@ -27,6 +30,7 @@ body{
     border-color: transparent;
     border-radius: 100%;
 }
+
 .eggArea {
     padding-top: 20%;
     padding-left: 30%;
@@ -37,4 +41,46 @@ body{
     outline: none;
     border-color: steelblue;
     border-radius: 80%;
+}
+
+.settings{
+    display: inline;
+}
+
+.info{
+    display: inline;
+}
+.minigame{
+    display: inline;
+}
+
+.textbox{
+    position: absolute;
+    margin-top: 2%;
+    background-color: black;
+    width: 80%;
+    height: 20%;
+    font-size: 18px;
+    padding-top: 3%;
+    padding-left: 3%;
+    margin-right: 30%;
+    color: white;
+}
+
+.choiceBox{
+    margin-top: 5%;
+}
+.yes{
+    display: inline;
+    padding: 2em;
+    padding-inline-start: 5em;
+    padding-inline-end: 5em;
+}
+
+.no{
+    margin-left: 28%;
+    display: inline;
+    padding: 2em;
+    padding-inline-start: 5em;
+    padding-inline-end: 5em;
 }

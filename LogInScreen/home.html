@@ -5,6 +5,7 @@
     </head>
 <body>
     <div class="mainContainer">
+
         <!-- search bar and video -->
         <div class="searchBar">
             <form>
@@ -30,14 +31,16 @@
             </script>
         </div>
         <!-- search bar and video -->
+
+
         <!-- Avi and Egg -->
         <div class="avi_line">
             <div class="aviArea">
                 <button class="button avi"> <img src="avi.png" width="100" height="100"> </button>
-                <div class="avi-settings"> <button class="settings">Settings</button></div>
+                <!--<div class="avi-settings"> <button class="settings">Settings</button></div>
                 <div class="avi-info"> <button class="info">Info</button></div>
                 <div class="avi-minigame"> <button class="minigame"> Minigame</button></div>
-            </div>
+                --></div>
             <div class="eggArea">
                 <button class="button egg" onmousedown="egg(0.5)"> <img src="egg.png" width="100" height="120"> </button>
                 Egg EXP:
@@ -46,11 +49,20 @@
         </div>
         <!-- Avi and Egg -->
 
+
+
         <!-- TextBox -->
         <div class="textbox">
-
+            Oh it's moving! Do you want to pet it?
+            <div class= "choiceBox">
+                <button class="button yes"> Y E S </button>
+                <button class="button no"> N O </button>
+            </div>
         </div>
         <!-- TextBox -->
+
+
+
         <script>
             var egg_time = 0;
             function egg(num) {
@@ -63,7 +75,7 @@
             var thresholdReached = false;
             myPlayer.on('timeupdate', function () { // the interaction with the video
                 for (var i = 0; i < threshold; i++) {
-                    egg(1); //controls how fast the egg_increase is :D
+                    egg(.25); //controls how fast the egg_increase is :D
                     console.log("Tick" + this.currentTime()); //ticks work!!!
                 }
                 /*
@@ -74,5 +86,9 @@
             });
 
         </script>
+
+
+
+
     </div>
 </body> 
