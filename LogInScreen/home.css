@@ -2,7 +2,9 @@ body{
     font-family: "Times", Times, serif;
     background-image: radial-gradient( #b6d4e7 0%, #417da5 100%);
  }
-
- .searchBar{
-     
- }
+.vjs-default-skin .vjs-big-play-button {
+    margin-left: -@big-play-width/2;
+    margin-top: -@big-play-height/2;
+    left: 50%;
+    top: 50%;
+}
