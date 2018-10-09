@@ -5,6 +5,7 @@
     </head>
 <body>
     <div class="mainContainer">
+        <!-- search bar and video -->
         <div class="searchBar">
             <form>
                 <input class="searchBarInput" placeholder="Search . . .">
@@ -29,10 +30,13 @@
             </script>
         </div>
         <!-- search bar and video -->
-
+        <!-- Avi and Egg -->
         <div class="avi_line">
             <div class="aviArea">
-                <button class="button avi"> <img src="avi.png" width="100" height="100"> </button> 
+                <button class="button avi"> <img src="avi.png" width="100" height="100"> </button>
+                <div class="avi-settings"> <button class="settings">Settings</button></div>
+                <div class="avi-info"> <button class="info">Info</button></div>
+                <div class="avi-minigame"> <button class="minigame"> Minigame</button></div>
             </div>
             <div class="eggArea">
                 <button class="button egg" onmousedown="egg(0.5)"> <img src="egg.png" width="100" height="120"> </button>
@@ -40,8 +44,13 @@
                 <span id="egg_time"> 0 </span>
             </div>
         </div>
+        <!-- Avi and Egg -->
 
+        <!-- TextBox -->
+        <div class="textbox">
 
+        </div>
+        <!-- TextBox -->
         <script>
             var egg_time = 0;
             function egg(num) {
