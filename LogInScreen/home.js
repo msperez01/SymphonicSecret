@@ -9,3 +9,4 @@ window.setInterval(function(){
     egg(1);
    }, 500); //will do everything at tick of 500ms or .5sec
 
+
