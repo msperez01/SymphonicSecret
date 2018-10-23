@@ -1,5 +1,6 @@
 <template>
   <div class="video-player">
+    <button v-on:click="logout"> Logout </button>
     <div class="video-container">
         <iframe width="640" height="360" :src="this.activeVideo.youtubeURL" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           <h3>{{this.activeVideo.title}}</h3>
@@ -19,6 +20,22 @@
           <p class="thumbnail-views">{{video.views}} Views</p>
         </div>
     </div>
+     <!-- Avi and Egg -->
+     <div class="avi_line">
+        <div class="aviArea">
+            <button class="button avi"> <img src="https://i.imgur.com/D191Onw.png" width="100" height="100"> </button>
+            <!--
+            <div class="avi-info"> <button class="info" onmousedown="get_EXP()">Info</button></div>
+            <div class="avi-settings"> <button class="settings">Settings</button></div>
+            <div class="avi-minigame"> <button class="minigame"> Minigame</button></div>
+            --></div>
+        <div class="eggArea">
+            <button class="button egg" onmousedown="egg(0.5)"> <img src="egg.png" width="100" height="120"> </button>
+            Egg EXP:
+            <span id="egg_time"> 0 </span>
+        </div>
+    </div>
+     <div class="egg_tick"></div>
 </div>
   </div>
 </template>
@@ -76,6 +93,10 @@ let videos = [{
     views: 0
   }];
 
+var egg_time;
+var ytplayer = document.getElementById("activeVideo");
+var threshold = 1;
+var thresholdReached = false;
 export default {
   name: 'VideoPlayer',
   data () {
@@ -93,8 +114,31 @@ export default {
   },
   addLike(){
   this.activeVideo.likes += 1;
+  },
+  logout:function(){
+      firebase.auth().signOut().then(() => {
+        alert('Bye bye')
+        this.$router.replace('login')
+      })
+  },
+  ticker(){
+    ytplayer.on('timeupdate', function () { // the interaction with the video
+      for (var i = 0; i < threshold; i++) {
+        egg(0.25); //controls how fast the egg_increase is :D
+        //console.log("Tick" + this.currentTime()); //ticks work!!!
+       }
+    })
+  },
+  egg(num) {   
+    if(egg_time == null)
+      egg_time = 0;  
+    egg_time = egg_time + num;
+   localStorage.setItem('Egg EXP', egg_time); 
+   console.log("Console Egg EXP:", egg_time);  
+   console.log("Local Storage Egg EXP:", localStorage.getItem('Egg EXP'));                
   }
-  }
+
+}
 }
 /* eslint-enable */
 </script>
