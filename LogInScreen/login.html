@@ -2,35 +2,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="login.css">
     <script type="text/javascript" src="login.js"></script>
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
-
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
     <!-- Add additional services that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-functions.js"></script>
 
     <!-- Comment out (or don't include) services that you don't want to use -->
     <!-- <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-storage.js"></script> -->
-
-    <script>
-        var config = {
-            // ...
-        };
-        firebase.initializeApp(config);
-    </script>
-    <script>
-        var config = {
-            apiKey: "AIzaSyAspp7dZuAo2vu2901wEhSQAxltem5wanA",
-            authDomain: "symphonicsecret.firebaseapp.com",
-            databaseURL: "https://symphonicsecret.firebaseio.com",
-            projectId: "symphonicsecret",
-            storageBucket: "symphonicsecret.appspot.com",
-            messagingSenderId: "836529216891"
-        };
-        firebase.initializeApp(config);
-    </script>
+    
 </head>
 
 <body>
@@ -39,50 +19,15 @@
     <div class="container-login">
         <!--Email and password forms-->
         <form class="emailInput">
-            <input type="text" name="email" placeholder="Email . . .">
-            <label for="email"> </label>
+            <input type="text" v-model="email" name="email" placeholder="Email . . .">
         </form>
 
         <form class="passInput">
-            <input type="text" name="pass" placeholder="Password . . ." inputmode="numeric" minlength="8" maxlength="30" size="30" id="passwordLength">
-            <label for="pass"> </label>
+            <input type="text" v-model="password" name="pass" placeholder="Password . . ." inputmode="numeric" minlength="8" maxlength="30" size="30" id="passwordLength">
         </form>
-        <a href="home.html"><button class="loginButton"> ENTER </button></a>
+        <button v-on:click="signIn" class="loginButton"> ENTER </button>
 
         <br> <button class="register" id="register"> Click here to register! </button>
-        <div id="myModal" class="modal"> 
-            <span class="close"> &times;</span>
-            <!-- Enter Register Information Here-->
-            <p> This is the body yadda yadda blah blah</p>
-        </div>
-
-        <script id="modal_stuff">                   
-            // Get the modal
-            var modal = document.getElementById('myModal');
-
-            // Get the button that opens the modal
-            var btn = document.getElementById("register");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks on the button, open the modal 
-            btn.onclick = function () {
-            modal.style.display = "block";
-            }
-
-           // When the user clicks on <span> (x), close the modal
-           span.onclick = function () {
-            modal.style.display = "none";
-           }
-
-           // When the user clicks anywhere outside of the modal, close it
-           window.onclick = function (event) {
-            if (event.target == modal) {
-            modal.style.display = "none";
-            }
-           }
-        </script>
 
     </div>
     <button class="forgottenPassword">Forgot your password?</button>
@@ -91,6 +36,60 @@
         <div class="buttonSpace"></div>
         <button class="google"> GImage </button>
     </div>
+
+    
+    <script>
+            var config = {
+                apiKey: "AIzaSyAspp7dZuAo2vu2901wEhSQAxltem5wanA",
+                authDomain: "symphonicsecret.firebaseapp.com",
+                databaseURL: "https://symphonicsecret.firebaseio.com",
+                projectId: "symphonicsecret",
+                storageBucket: "symphonicsecret.appspot.com",
+                messagingSenderId: "836529216891"
+            };
+            firebase.initializeApp(config);
+            
+            var app = new Vue({
+            el: '#vue-app'
+            });
+    
+            Vue.component('todo-component', {
+                template: '#todo-component',
+                data: function () {
+                    return {
+                        items: [
+                            {
+                                id: 'item-1',
+                                title: 'Checkout vue',
+                                completed: false
+                            }, {
+                                id: 'item-2',
+                                title: 'Use this stuff!!',
+                                completed: false
+                            }
+                        ],
+                        newItem: ''
+    
+                    };
+                },
+                methods: {
+                    addItem: function () {
+                        if (this.newItem) {
+                            var item = {
+                                id: Math.random(0, 10000),
+                                title: this.newItem,
+                                completed: false
+                            };
+    
+                            this.items.push(item);
+                            this.newItem = '';
+                        }
+                    }
+                }
+        });
+    
+        </script>
+
 
     <div class="music2"></div>
 

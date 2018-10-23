@@ -1,10 +1,11 @@
 <template>
     <div class="sign-up">
-        <p> Let's make that new account bro</p>
-        <input type="text" v-model="email" placeholder="TotallyLegitEmail(tm)"><br>
-        <input type="password" v-model="password" placeholder="Pass the Ta"><br>
-        <button v-on:click="signUp"> REGIS TARR </button>
-        <span> or <router-link to ="/login"> go back</router-link> to login ;; Wasted my time</span>
+       <img src="https://i.imgur.com/LjjBd7v.png" height="280" width="380"> 
+        <h3> Let's make that new account bro</h3>
+        <input type="text" v-model="email" placeholder="Enter your email"><br>
+        <input type="password" v-model="password" placeholder="Enter your password"><br>
+        <button v-on:click="signUp"> Create </button>
+        <span> <router-link to ="/login"> Click here to go back </router-link></span>
     </div>
 </template>
 
