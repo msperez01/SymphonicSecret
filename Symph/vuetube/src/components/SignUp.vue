@@ -1,6 +1,6 @@
 <template>
     <div class="sign-up">
-       <img src="https://i.imgur.com/LjjBd7v.png" height="280" width="380"> 
+       <img src="https://i.imgur.com/LjjBd7v.png" height="280" width="380">
         <h3> Let's make that new account bro</h3>
         <input type="text" v-model="email" placeholder="Enter your email"><br>
         <input type="password" v-model="password" placeholder="Enter your password"><br>
@@ -14,7 +14,7 @@
     import firebase from 'firebase'
 
     export default{
-        name: 'signUp', 
+        name: 'signUp',
         data: function(){
             return{
                 email : '',
@@ -26,19 +26,29 @@
                 firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
                     function(user){
                         alert('Your account was created!')
-                        this.$router.replace('VideoPlayer')
+                        this.proceed();
                     },
                     function(err){
                         alert('Uh oh...' + err.message)
                     }
                 );
-                    
-            }
+            },
+          proceed: function(){
+              firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+                (user) => {
+                  alert('Let us begin...')
+                  this.$router.replace('VideoPlayer')
+                },
+                (err) => {
+                  alert('Uh oh.' + err.message)
+                }
+              );
+          }
         }
     }
 </script>
 
-<style scoped> 
+<style scoped>
 .signUp{
     margin-top: 40px;
 }

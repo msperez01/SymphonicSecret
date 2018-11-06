@@ -11,14 +11,6 @@ Vue.use(Router)
 let router = new Router({
   routes: [
     {
-      path: '*',
-      redirect: '/login' 
-    },
-    {
-      path: '/',
-      redirect: '/login' 
-    },
-    {
       path:'/login', //what the login page is.
       name: 'Login',
       component: Login
@@ -35,7 +27,7 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
-    }, */
+    },/*/
     {
       path: '/VideoPlayer',
       name: 'VideoPlayer',
@@ -43,7 +35,7 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
-    }, //each comma is important
+    }
   ]
 })
 
@@ -53,9 +45,10 @@ router.beforeEach((to,from,next) => {
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if(requiresAuth && !currentUser) next ('login')
-  else if(!requiresAuth && currentUser) next ('helloworld')
+  else if(!requiresAuth && currentUser) next ('VideoPlayer')
   else next()
 
 })
 
 export default router
+

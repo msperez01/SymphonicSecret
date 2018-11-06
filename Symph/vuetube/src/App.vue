@@ -1,22 +1,26 @@
 <template>
   <div id="app">
-  <router-view> </router-view>
+    <router-view></router-view>
 </div>
 </template>
 
 <script>
-//<VideoPlayer/>
+//<VideoPlayer/> <router-view> </router-view>
 import VideoPlayer from './components/VideoPlayer'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
+import HelloWorld from './components/HelloWorld'
+
 export default {
   name: 'App',
-  components: {  
+  components: {
     Login,
     SignUp,
     VideoPlayer,
+    HelloWorld
   }
 }
+
 </script>
 
 <style>
@@ -27,9 +31,9 @@ export default {
   color: #2c3e50;
 }
 
-html{
+body{
   background-image: radial-gradient( #b6d4e7 0%, #417da5 100%);
-  repeat: none;
+  background-repeat: none;
  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
