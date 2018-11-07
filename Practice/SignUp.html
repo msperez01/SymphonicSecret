@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <div id="app">
+        <div class="sign-up">
+            <img src="https://i.imgur.com/LjjBd7v.png" height="280" width="380">
+            <h3> Let's make that new account bro</h3>
+            <input type="text" v-model="email" placeholder="Enter your email"><br>
+            <input type="password" v-model="password" placeholder="Enter your password"><br>
+            <button v-on:click="signUp"> Create </button>
+            <span> <router-link to ="/login"> Click here to go back </router-link></span>
+        </div>
+    </div>
+
+</head>
+<body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data:{
+            msg: 'yohohoho'}
+    })
+    import firebase from 'firebase'
+
+    default{
+        name: 'signUp',
+        data: function(){
+            return{
+                email : '',
+                password : ''
+            }
+        },
+        methods: {
+            signUp: function(){
+                firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+                    function(user){
+                        alert('Your account was created!')
+                        this.proceed();
+                    },
+                    function(err){
+                        alert('Uh oh...' + err.message)
+                    }
+                );
+            },
+            proceed: function(){
+                firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+                    (user) => {
+                        alert('Let us begin...')
+                        this.$router.replace('VideoPlayer')
+                    },
+                    (err) => {
+                        alert('Uh oh.' + err.message)
+                    }
+                );
+            }
+        }
+    }
+</script>
+<style>
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #2c3e50;
+    }
+
+    body{
+        background-image: radial-gradient( #b6d4e7 0%, #417da5 100%);
+        background-repeat: none;
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+
+    .login{
+        margin-top: 40px;
+    }
+
+    input{
+        margin: 10px 0;
+        width: 20%;
+        padding: 15px;
+    }
+
+    input[type=text] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid rgb(255, 255, 255);
+        background-color: transparent;
+        border-radius: 4px;
+        width: 30%;
+        transition: width 0.4s ease-in-out;
+        position: relative;
+    }
+
+    input[type=text]:focus{
+        width: 91%;
+        background-color: transparent;
+        border: 3px solid rgb(167, 211, 212);
+    }
+
+    input[type=password] {
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid rgb(255, 255, 255);
+        background-color: transparent;
+        border-radius: 4px;
+        width: 30%;
+        transition: width 0.4s ease-in-out;
+        position: relative;
+    }
+
+    input[type=password]:focus{
+        width: 91%;
+        background-color: transparent;
+        border: 3px solid rgb(167, 211, 212);
+    }
+    button{
+        margin-top: 20px;
+        width: 10%;
+        cursor: pointer;
+        background-color: #b6d4e7;
+        border: none;
+        color: rgb(17, 59, 83);
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+    p{
+        margin-top: 40px;
+        font-size: 13px;
+    }
+    p a{
+        text-decoration: underLine;
+        cursor: pointer;
+    }
+
+    .signUp{
+        margin-top: 40px;
+    }
+
+    input{
+        margin: 10 0;
+        width: 20%;
+        padding: 15px;
+    }
+
+    button{
+        margin-top: 10px;
+        width: 10%;
+    }
+
+    span{
+        display: block;
+        margin-top: 20px;
+        font-size: 11px;
+    }
+
+</style>
+</body>
+</html>

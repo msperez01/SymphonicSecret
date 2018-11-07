@@ -9,11 +9,8 @@
   <div class="video-player">
     <br/>
     <div class="video-container">
-    <!--<div id="player"></div>-->
-      <!--<iframe id="player" width="640" height="360" :src="this.activeVideo.youtubeURL" ref = "youtube" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen position="center"></iframe>
-      -->
-      <iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/{{videoid}}" frameborder="0" allowfullscreen></iframe>
-      <!--<div id="player"></div>-->
+      <iframe id="player" width="640" height="360" :src="this.activeVideo.youtubeURL" ref = "youtube" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen position="center"></iframe>
+
         <h3>{{this.activeVideo.title}}</h3>
         <div class="row">
             <p>{{this.activeVideo.views}} views</p>
@@ -22,23 +19,10 @@
         <div class="aviArea">
           <button class="buttonAvi"> <img src="https://i.imgur.com/D191Onw.png" width="100" height="100"> </button>
           <img id="buttonEgg" src="https://i.imgur.com/S2TagaG.png" width="300" height="300">
-          <!--<button class="""buttonEgg" onmousedown="egg(0.5)"> <img src="https://i.imgur.com/S2TagaG.png" width="300" height="320"> </button>-->
-        </div>
+          </div>
     <div id="results"></div>
   </div>
-  </div><!--
-    <div class="video-list">
-      <div @click="chooseVideo(video)" :key="video.id" v-for="video in videos" class="thumbnail">
-        <div class="thumbnail-img">
-          <img :src="video.thumbnail" />
-        </div>
-        <div class="thumbnail-info">
-          <h3>{{video.title}}</h3>
-          <p>{{video.creator}}</p>
-          <p class="thumbnail-views">{{video.views}} Views</p>
-        </div>
-      </div>
-    </div>-->
+  </div><
   <div class="results"></div>
   </div>
 </template>

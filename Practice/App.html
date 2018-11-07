@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How are you here</title>
+    <div id="app">
+    <router-view></router-view>
+</div>
+</head>
+<body>
+<script>
+    import VideoPlayer from './components/VideoPlayer'
+    import Login from './components/Login'
+    import SignUp from './components/SignUp'
+    import HelloWorld from './components/HelloWorld'
+
+    default {
+        name: 'App',
+        components: {
+            Login,
+            SignUp,
+            VideoPlayer,
+            HelloWorld
+        }
+    }
+</script>
+</body>
+</html>
