@@ -1,8 +1,8 @@
 <!--suppress ALL -->
 <template>
   <div class="html">
-    <form class = "searchBar" id="search" method="get"  >
-    <input type="submit" value=Search width=250px @click="changeVid"/>
+    <form class = "searchBar" id="search" method="get">
+    <input type="submit" class="buttonSearch" value=Search width=250px @click="changeVid"/>
     <br/><input v-model= "searchTerm" id="searchTerm" name="search_query" type="text" maxlength="128"/>
     </form>
     <button @click="logout" class="buttonLogout"> Logout </button>
@@ -14,7 +14,6 @@
         <h3>{{this.activeVideo.title}}</h3>
         <div class="row">
             <p>{{this.activeVideo.views}} views</p>
-            <p>{{this.activeVideo.likes}} <button @click="addLike" > :D </button></p>
         </div>
         <div class="aviArea">
           <button class="buttonAvi"> <img src="https://i.imgur.com/D191Onw.png" width="100" height="100"> </button>
@@ -88,9 +87,6 @@ export default {
       choice1();
     }
   },
-  addLike () {
-    this.activeVideo.likes += 1;
-  },
   logout () {
     firebase.auth().signOut().then(() => {
       alert('Bye bye')
@@ -102,39 +98,6 @@ export default {
     }
   }
 }
-
-
-$(function() {
-  $("form").on("submit", function(e) {
-    e.preventDefault();
-    // prepare the request
-    var request = gapi.client.youtube.search.list({
-      part: "snippet",
-      type: "video",
-      q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-      maxResults: 3,
-      order: "viewCount",
-      publishedAfter: "2015-01-01T00:00:00Z"
-    });
-    // execute the request
-    request.execute(function(response) {
-      var results = response.result;
-      $("#results").html("");
-      $.each(results.items, function(index, item) {
-        $.get("tpl/item.html", function(data) {
-          $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
-        });
-      });
-      resetVideoHeight();
-    });
-  });
-  $(window).on("resize", resetVideoHeight);
-});
-
-function resetVideoHeight() {
-  $(".video").css("height", $("#results").width() * 9/16);
-}
-function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
 
 function choice1 (){
   let ch = confirm('The egg is moving! Should you let AVRI pet it?')
@@ -209,6 +172,7 @@ button{
     width: 50px;
 }
 
+
 .aviArea{
     display:flex;
     margin-left: 7em;
@@ -231,8 +195,20 @@ button{
     outline: none;
     border-color: transparent;
 }
-
   .searchBar{
     position: top absolute;
+  }
+
+  .buttonSearch{
+    display: inline-block;
+    color: #fff;
+    background: #42b983;
+    margin: 20px;
+    width: 130px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
   }
 </style>

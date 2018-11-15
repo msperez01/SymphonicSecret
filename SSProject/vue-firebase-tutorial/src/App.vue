@@ -11,6 +11,7 @@
   import Login from './components/Login'
   import SignUp from './components/SignUp'
   import HelloWorld from './components/HelloWorld'
+  import Firebase from 'firebase'
 
   export default {
     name: 'App',
@@ -21,7 +22,46 @@
       HelloWorld
     }
   }
+  /*
+    var config = {
+    apiKey: "AIzaSyAspp7dZuAo2vu2901wEhSQAxltem5wanA",
+    authDomain: "symphonicsecret.firebaseapp.com",
+    databaseURL: "https://symphonicsecret.firebaseio.com",
+    projectId: "symphonicsecret",
+    storageBucket: "symphonicsecret.appspot.com",
+    messagingSenderId: "836529216891"
+  };
+  let app = Firebase.initializeApp(config);
+  let db = app.database();
+  let userRef = db.ref('user');
 
+
+  export default {
+    name: 'App',
+    components: {
+      Login,
+      SignUp,
+      VideoPlayer,
+      HelloWorld
+    },
+    firebase: {
+      books: userRef
+    }
+  }
+
+
+  let config = {
+    apiKey: "AIzaSyAspp7dZuAo2vu2901wEhSQAxltem5wanA",
+    authDomain: "symphonicsecret.firebaseapp.com",
+    databaseURL: "https://symphonicsecret.firebaseio.com",
+    projectId: "symphonicsecret",
+    storageBucket: "symphonicsecret.appspot.com",
+    messagingSenderId: "836529216891"
+  };
+  let app = Firebase.initializeApp(config)
+  let db = app.database()
+
+  let userRef = db.ref('user')*/
 </script>
 
 <style>
