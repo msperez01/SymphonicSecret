@@ -16,11 +16,11 @@
       <img id="buttonEgg" src="https://i.imgur.com/S2TagaG.png" width="300" height="300">
     </div>
   </div>
-  <button v-on:click="timeCheck" id="eggEXP"> EXP </button>
-  <button v-on:click="logout"> Logout </button>
-  <button v-on:click="saveEXP" id="eggers"> SAVE </button>
-
-
+  <nav class="menu">
+    <button v-on:click="timeCheck" id="eggEXP"> Demo </button>
+    <button v-on:click="logout"> Logout </button>
+    <button v-on:click="saveEXP" id="eggers"> SAVE </button>
+  </nav>
 </div>
 </template>
 <script >
@@ -39,6 +39,7 @@ let seconds =parseInt(getStoredValue("EXP"),10);// make this = to 0 to reset EXP
 var t = setInterval(UpdateTime, 1000); //unsaved exp every 1 seconds
 var t = setInterval(autoSave, 60000); //autosaves exp every 10 seconds
 var t = setInterval(checkEXP, 10000); // exp
+var history = [];
 function storeValue(key, value){
   if(localStorage)
     localStorage.setItem(key, value);
@@ -126,16 +127,29 @@ function choice1(){
     let img = document.getElementById("buttonEgg");
     img.src = "https://i.imgur.com/VlhPcpB.png";
     alert('It looks happy!');
+    previousEgg(img.src);
     return false;
     //r = "https://i.imgur.com/VlhPcpB.png";
   } else {
     let img = document.getElementById("buttonEgg");
     img.src = "https://i.imgur.com/qwgHnmj.png";
     alert('Something about it looks off...');
+    previousEgg(img.src);
     return false;
     //r = "https://i.imgur.com/qwgHnmj.png";
   }
 }
+
+function previousEgg(x){
+  history.push(x);
+  console.log("Choice has been engraved.");
+  var i;
+  for (i = 0; i < history.length; i++) {
+    console.log(history[i]);
+  }
+}
+
+
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
