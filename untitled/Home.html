@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        import * as firebase from "firebase";
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+</head>
+<body>
+<div class="enterShite" id="enterShite">
+    <button onclick="myFunction()">Click me</button>
+</div>
+
+<script>
+    function myFunction() {
+        alert("Har har");
+    }
+    const config = {
+        apiKey: "AIzaSyAspp7dZuAo2vu2901wEhSQAxltem5wanA",
+        authDomain: "symphonicsecret.firebaseapp.com",
+        databaseURL: "https://symphonicsecret.firebaseio.com",
+        projectId: "symphonicsecret",
+        storageBucket: "symphonicsecret.appspot.com",
+        messagingSenderId: "836529216891"
+    };
+
+    const database = firebase.database();
+    const ref = database.ref('items');
+    const apiConfig = {
+        apiKey: "AIzaSyCHHmbCzn_-hd8uuU5LmLGBaGAlIyqd1Vg",
+        clientId: "836529216891-0sc8lom3ltd0cjgf4au2kfbi55qhl4kb.apps.googleusercontent.com",
+        discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+        scope: "https://www.googleapis.com/auth/spreadsheets"
+        // see all available scopes here: https://developers.google.com/identity/protocols/googlescopes'
+    };
+
+    firebase.initializeApp(config);
+
+
+</script>
+
+</body>
+
+</html>
+
