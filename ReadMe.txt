@@ -5,7 +5,6 @@ Things to do:
 3. Home screen
 4. Avri's radial settings
     a. regular settings (sounds, etc)
-    b. 
 5. Icon images (icon stands for something)
 6. Story conditions
 
