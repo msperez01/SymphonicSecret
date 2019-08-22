@@ -16,4 +16,3 @@ GUI creation:
 2. Register screen
 3. homescreen (searchbar, video)
 4. Avri's radial settings
-5.
